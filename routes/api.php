@@ -25,6 +25,9 @@ Route::group(['prefix'=>'auth'],function(){
     Route::post('login',[UserController::class,'login']);
 });
 
+
+    Route::get('/user',[UserController::class,'user']);
+
 Route::group(['prefix'=>'company'],function(){
     Route::get('/',[CompanyController::class,'index']);
     Route::get('/home-items',[CompanyController::class,'homeItems']);
@@ -33,6 +36,7 @@ Route::group(['prefix'=>'company'],function(){
     Route::patch('/{id}',[CompanyController::class,'edit']);
     Route::delete('/{id}',[CompanyController::class,'remove']);
 });
+
 
 Route::group(['prefix'=>'country'],function(){
     Route::get('/',[CountryController::class,'index']);
